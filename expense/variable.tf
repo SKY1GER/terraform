@@ -3,6 +3,7 @@
 #thirdpreference is Env variable(export TF_VAR_instance_type="t3.micr")
 #4 variable default value
 
+# ***instance variables***
 variable  "instance_names"{
   default = ["db","backend","frontend"]
 }
@@ -21,11 +22,13 @@ variable "instance"{
 
 variable "common_tags"{
   default = {
-    project = "Expense"
+    project = "expense"
     Environment = "Dev"
     terraform = "true"
   }
 }
+
+# ***sg variables***
 
 variable "sg_name"{
     default = "allow_ssh"
@@ -47,4 +50,14 @@ variable "ssh_port"{
 
 variable "allowed_cidr"{
     default = ["0.0.0.0/0"]
+}
+
+# ***route53 variables
+
+variable "zone_id"{
+  default = "Z014219415ZOFWJY17BGO"
+}
+
+variable "domain_name"{
+  default = "daws79s.online"
 }
