@@ -23,6 +23,7 @@ variable "common_tags"{
   default = {
     project = "Expense"
     Environment = "Dev"
+    terraform = "true"
   }
 }
 
