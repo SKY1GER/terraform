@@ -1,9 +1,10 @@
 resource "aws_instance" "instances"{
-    count = 3
+    #count = 3
+    count = lenght(var.instance_names)
     ami = var.image_id
     vpc_security_group_ids = [aws_security_group.allowssh.id]
-    type = t3.micro
-    tags{
+    instance_type = "t3.micro"
+    tags={
         Name = var.instance_names[count.index]
     }
 }
